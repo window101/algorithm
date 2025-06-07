@@ -2,7 +2,6 @@ package programmers.fileNameSorting;
 
 import java.util.Arrays;
 
-
 class Solution {
 
     static class FileSort {
@@ -35,8 +34,6 @@ class Solution {
             }
             realNum = Integer.parseInt(number);
         }
-
-
     }
     public String[] solution(String[] files) throws Exception{
         
@@ -44,25 +41,22 @@ class Solution {
         for(int i = 0; i<files.length; i++) {
             filesort[i] = new FileSort(files[i], i);
         }
-        Arrays.sort(filesort, (a,b) -> {
+        Arrays.sort(filesort, (a,b) -> { // 사용자 기준 정렬 (head 사전순 -> realNum 숫자 크기순)
             int headComp = a.head.compareTo(b.head);
             if(headComp != 0) return headComp;
-            int numCompt = Integer.compare(a.realNum, b.realNum);
-            return numCompt;
+            int numComp = Integer.compare(a.realNum, b.realNum);
+            return numComp;
         });
         String[] answer = new String[files.length];
         for(int i = 0; i<files.length; i++) {
             answer[i] = filesort[i].str;
         }
-
-
         return answer;
     }
 }
 public class fileNameSorting {
     public static void main(String[] args) throws Exception {
         String [] files = new String[] {"img12.png", "img10.png", "img02.png", "img1.png", "IMG01.GIF", "img2.JPG"};
-
         Solution sol = new Solution();
         System.out.println(Arrays.toString(sol.solution(files)));
     }
