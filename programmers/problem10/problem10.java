@@ -21,21 +21,22 @@ class Solution {
         }
         while(!queue.isEmpty() || !bridge.isEmpty()) {
             answer++;
-            
-            if(!bridge.isEmpty() && (answer - bridge.peek().truck_time) == bridge_length) {
+            for(Truck t : bridge) {
+                t.truck_time++;
+            }
+            if(!bridge.isEmpty() && bridge.peek().truck_time== bridge_length) {
                 total_weight -= bridge.peek().weight;
                 bridge.poll();
             }
             if(!queue.isEmpty() && total_weight + queue.peek() <= weight ) {
                 int truck_weight = queue.poll();
                 total_weight += truck_weight;
-                bridge.add(new Truck(answer, truck_weight));
+                bridge.add(new Truck(0, truck_weight));
             }
         }
         return answer;
     }
 }
-
 public class problem10 {
     public static void main(String[] args) {
         int bridge_length = 2;
