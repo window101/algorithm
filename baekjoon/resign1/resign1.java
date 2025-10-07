@@ -30,6 +30,5 @@ public class resign1 {
             dfs(start+dp[start][0], money+dp[start][1]);
         }
         dfs(start+1, money);
-
     }
 }

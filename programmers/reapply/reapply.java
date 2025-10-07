@@ -2,20 +2,22 @@ package programmers.reapply;
 
 class Solution {
     public int solution(int n, int m, int[] section) {
-        
+     
         int answer = 0;
         int indx = 0;
+        
         while(indx < section.length) {
             int s = section[indx];
-            int e = section[indx] + m - 1;
+            int e = s + m - 1;
             answer++;
-            while(indx < section.length && section[indx] <= e) {
+            while(section[indx] <= e && indx < section.length) {
                 indx++;
             }
-            
         }
         return answer;
+
     }
+        
 }
 public class reapply {
     public static void main(String[] args) {
