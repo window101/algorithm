@@ -11,5 +11,18 @@
     "java.project.outputPath": "bin",
 
     // 🔁 소스 변경 시 자동으로 빌드 설정 갱신
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+
+    "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.wordBasedSuggestions": "off",
+    "editor.parameterHints.enabled": false,
+    "editor.inlineSuggest.enabled": false
+
+
 }
