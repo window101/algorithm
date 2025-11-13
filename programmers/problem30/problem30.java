@@ -46,7 +46,6 @@ class Solution {
             long wait = t - cur.arrival;
             answer[cur.score] += wait;
             t += cur.run;
-            
         }
         answer[0] = t;
         return answer;
