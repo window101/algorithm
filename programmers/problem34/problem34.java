@@ -11,9 +11,9 @@ class Solution {
             cur = end;
         }
         for(int i = 0; i<commands.length; i++) {
-            if(cur >= start && cur <= end) {
-                cur = end;
-            }
+            // if(cur >= start && cur <= end) {
+            //     cur = end;
+            // }
             if(commands[i].equals("prev")) {
                 if(cur <= 10) {
                     cur = 0;
